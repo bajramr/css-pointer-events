@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pointer Events — Beginner Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="demo">
+    <div class="intro">
+      <p class="eyebrow">CSS FOR BEGINNERS</p>
+      <h1>When does a button stop working?</h1>
+      <p>Compare <code>pointer-events: none</code> with the HTML <code>disabled</code> attribute.</p>
+    </div>
+
+    <div class="cards">
+      <!-- 1. This button works with a pointer and a keyboard. -->
+      <section class="card" aria-labelledby="normal-title">
+        <span class="number" aria-hidden="true">01</span>
+        <h2 id="normal-title">Normal button</h2>
+        <code class="code-label">&lt;button&gt;</code>
+        <button id="normal-button" type="button">Try clicking me</button>
+        <dl>
+          <div><dt>Mouse:</dt><dd class="works">works</dd></div>
+          <div><dt>Keyboard:</dt><dd class="works">works</dd></div>
+        </dl>
+      </section>
+
+      <!-- 2. CSS ignores this button as a pointer target, but Tab and Enter still work. -->
+      <section class="card" aria-labelledby="pointer-title">
+        <span class="number" aria-hidden="true">02</span>
+        <h2 id="pointer-title">Pointer events: none</h2>
+        <code class="code-label">pointer-events: none;</code>
+        <button id="pointer-button" class="no-pointer" type="button">Try clicking me</button>
+        <dl>
+          <div><dt>Mouse:</dt><dd class="warning">passes through</dd></div>
+          <div><dt>Keyboard:</dt><dd class="works">still works</dd></div>
+        </dl>
+      </section>
+
+      <!-- 3. The HTML disabled attribute disables this button. -->
+      <section class="card" aria-labelledby="disabled-title">
+        <span class="number" aria-hidden="true">03</span>
+        <h2 id="disabled-title">Disabled button</h2>
+        <code class="code-label">&lt;button disabled&gt;</code>
+        <button id="disabled-button" type="button" disabled>Unavailable</button>
+        <dl>
+          <div><dt>Mouse:</dt><dd class="disabled-label">disabled</dd></div>
+          <div><dt>Keyboard:</dt><dd class="disabled-label">skipped</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <section class="keyboard-tip" aria-labelledby="keyboard-title">
+      <div class="keys" aria-hidden="true"><kbd>Tab</kbd><kbd>Enter</kbd></div>
+      <div>
+        <h2 id="keyboard-title">Try your keyboard</h2>
+        <p>Press Tab to move between buttons. Press Enter or Space to activate the focused button.</p>
+        <p class="small">Inside the Playground viewer, click a blank area of this demo first, then press Tab. Browser and system keyboard settings can affect focus navigation.</p>
+      </div>
+    </section>
+
+    <section class="result" aria-labelledby="result-title">
+      <h2 id="result-title">Last action</h2>
+      <p id="message" role="status">Activate a button to see its message here.</p>
+    </section>
+
+    <p class="note"><span aria-hidden="true">ⓘ</span> <code>pointer-events: none</code> does not disable keyboard activation.</p>
+    <noscript><p class="note">JavaScript is off. You can still test focus and pointer behaviour, but the Last action message will not update.</p></noscript>
+  </main>
+</body>
+</html>
