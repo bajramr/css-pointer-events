@@ -2,6 +2,8 @@
 
 A small learning project by Bajram Ramadan comparing a normal button, a button with pointer-events: none, and a native disabled button.
 
+![CSS pointer events none compared with a disabled button](https://bajram.dev/wp-content/uploads/2026/10/css-pointer-events-none-vs-disabled-bajram-ramadan.webp)
+
 ## Run
 
 Extract the ZIP and open index.html. No installation, framework or build step is needed. The three runtime files are index.html, style.css and script.js.
